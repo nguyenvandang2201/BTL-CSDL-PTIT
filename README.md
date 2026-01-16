@@ -87,10 +87,6 @@ python manage.py runserver
 
 **Backend chạy tại:** http://localhost:8000
 
-**Tài khoản Admin:**
-- Username: `admin`
-- Password: `admin123`
-
 ### 3. Cài đặt Frontend
 
 ```bash
