@@ -289,19 +289,27 @@ http://localhost:8000/api
 
 ---
 
-## 📸 Screenshots
 
-### Trang chủ
-*Hiển thị danh sách phim đang chiếu*
-
-### Chọn ghế
-*Giao diện chọn ghế trực quan*
-
-### Thanh toán
-*Các phương thức thanh toán*
-
-### Admin Dashboard
-*Quản lý hệ thống*
+Đăng nhập phân quyền (Admin/User)
+<img width="975" height="577" alt="image" src="https://github.com/user-attachments/assets/715b0b55-1cb5-4a81-b802-609fea89d4ca" />
+Giao diện Admin
+Thông tin tài khoản
+Tính năng đổi mật khẩu
+Tính năng quản trị của Admin
+Tính năng Quản lý phim
+Tính năng Thêm phim mới
+Tính năng Quản lý thể loại
+Tính năng Thêm thể loại mới
+Tính năng Quản lý phòng chiếu 
+Tính năng Thêm phòng chiếu
+Tính năng Quản lý suất chiếu
+Tính năng Thêm suất chiếu
+Đăng kí tài khoản Người dùng - User
+Giao diện người dùng 
+Tính năng Đặt vé ngay
+Tính năng Chọn ghế
+Tính năng Thanh toán
+Tính năng xem lịch sử đặt vé
 
 ---
 
