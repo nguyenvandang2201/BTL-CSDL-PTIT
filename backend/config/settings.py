@@ -172,11 +172,3 @@ SIMPLE_JWT = {
     'TOKEN_TYPE_CLAIM': 'token_type',
 }
 CORS_ALLOW_ALL_ORIGINS = True
-# Tắt migration auto-detect cho BTL
-MIGRATION_MODULES = {
-    'api': None,  # Không tạo migration cho app api
-    'auth': None,
-    'contenttypes': None,
-    'sessions': None,
-    'admin': None,
-}
