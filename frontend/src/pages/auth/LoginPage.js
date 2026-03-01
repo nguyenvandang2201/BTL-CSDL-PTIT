@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 import { useAuth } from '../../contexts/AuthContext';
+import { FaVideo } from 'react-icons/fa';
 import '../../styles/Auth.css';
 
 const LoginPage = () => {
@@ -61,7 +62,7 @@ const LoginPage = () => {
     <div className="auth-page">
       <div className="auth-container">
         <div className="auth-box">
-          <h1 className="auth-title">🎬 Đăng nhập</h1>
+          <h1 className="auth-title"><FaVideo style={{marginRight: 8, color: '#e74c3c'}} /> Đăng nhập</h1>
           <p className="auth-subtitle">Chào mừng bạn quay trở lại!</p>
 
           {error && <div className="error-message">{error}</div>}

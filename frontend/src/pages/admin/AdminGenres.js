@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { genresAPI } from '../../services/api';
+import { FaPlus, FaEdit, FaTrash, FaTag } from 'react-icons/fa';
 import '../../styles/AdminPages.css';
 
 const AdminGenres = () => {
@@ -102,7 +103,7 @@ const AdminGenres = () => {
       <div className="page-header">
         <h2>Quản lý Thể loại</h2>
         <button className="btn-primary" onClick={() => setShowForm(true)}>
-          ➕ Thêm thể loại mới
+          <FaPlus style={{marginRight: 6}} /> Thêm thể loại mới
         </button>
       </div>
 
@@ -162,7 +163,7 @@ const AdminGenres = () => {
                 <tr key={genre.id}>
                   <td>{index + 1}</td>
                   <td className="genre-name">
-                    <span className="genre-badge">🏷️ {genre.name}</span>
+                    <span className="genre-badge"><FaTag style={{marginRight: 6, color: '#c0392b'}} />{genre.name}</span>
                   </td>
                   <td className="actions">
                     <button
@@ -170,14 +171,14 @@ const AdminGenres = () => {
                       onClick={() => handleEdit(genre)}
                       title="Chỉnh sửa"
                     >
-                      ✏️ Sửa
+                      <FaEdit style={{marginRight: 4}} /> Sửa
                     </button>
                     <button
                       className="btn-delete"
                       onClick={() => handleDelete(genre.id)}
                       title="Xóa"
                     >
-                      🗑️ Xóa
+                      <FaTrash style={{marginRight: 4}} /> Xóa
                     </button>
                   </td>
                 </tr>

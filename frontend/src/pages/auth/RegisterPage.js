@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 import { useAuth } from '../../contexts/AuthContext';
+import { FaVideo } from 'react-icons/fa';
 import '../../styles/Auth.css';
 
 const RegisterPage = () => {
@@ -107,7 +108,7 @@ const RegisterPage = () => {
     <div className="auth-page">
       <div className="auth-container">
         <div className="auth-box register-box">
-          <h1 className="auth-title">🎬 Đăng ký</h1>
+          <h1 className="auth-title"><FaVideo style={{marginRight: 8, color: '#e74c3c'}} /> Đăng ký</h1>
           <p className="auth-subtitle">Tạo tài khoản mới để đặt vé</p>
 
           {errors.general && (

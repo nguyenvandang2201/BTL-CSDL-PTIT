@@ -1,6 +1,7 @@
 import React from 'react';
 import { Outlet, Link, useNavigate } from 'react-router-dom';
 import { useAuth } from '../../contexts/AuthContext';
+import { FaVideo } from 'react-icons/fa';
 import '../../styles/Layout.css';
 
 const UserLayout = () => {
@@ -18,7 +19,7 @@ const UserLayout = () => {
         <div className="container">
           <div className="header-content">
             <Link to="/" className="logo">
-              🎬 Cinema Booking
+              <FaVideo style={{marginRight: 8, color: '#e74c3c'}} /> Cinema Booking
             </Link>
             
             <nav className="nav">

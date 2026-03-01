@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { auditoriumsAPI } from '../../services/api';
+import { FaPlus, FaEdit, FaTrash, FaEye } from 'react-icons/fa';
 import '../../styles/AdminPages.css';
 
 const AdminAuditoriums = () => {
@@ -115,7 +116,7 @@ const AdminAuditoriums = () => {
       <div className="page-header">
         <h2>Quản lý Phòng chiếu</h2>
         <button className="btn-primary" onClick={() => setShowForm(true)}>
-          ➕ Thêm phòng chiếu
+          <FaPlus style={{marginRight: 6}} /> Thêm phòng chiếu
         </button>
       </div>
 
@@ -197,13 +198,13 @@ const AdminAuditoriums = () => {
               </div>
 
               <div className="form-note">
-                <p>📝 <strong>Tổng số ghế:</strong> {
+                <p><strong>Tổng số ghế:</strong> {
                   (parseInt(formData.standard_row_count) + 
                    parseInt(formData.vip_row_count) + 
                    parseInt(formData.couple_row_count)) * 
                   parseInt(formData.seats_per_row) || 0
                 } ghế</p>
-                <p>🎫 Ghế sẽ được tự động tạo theo cấu hình: Thường (1x giá), VIP (1.5x giá), Đôi (2x giá)</p>
+                <p>Ghế sẽ được tự động tạo theo cấu hình: Thường (1x giá), VIP (1.5x giá), Đôi (2x giá)</p>
               </div>
 
               <div className="form-actions">
@@ -248,21 +249,21 @@ const AdminAuditoriums = () => {
                       onClick={() => handleViewSeats(auditorium)}
                       title="Xem sơ đồ ghế"
                     >
-                      👁️
+                      <FaEye />
                     </button>
                     <button 
                       className="btn-edit" 
                       onClick={() => handleEdit(auditorium)}
                       title="Chỉnh sửa"
                     >
-                      ✏️
+                      <FaEdit />
                     </button>
                     <button 
                       className="btn-delete" 
                       onClick={() => handleDelete(auditorium.id)}
                       title="Xóa"
                     >
-                      🗑️
+                      <FaTrash />
                     </button>
                   </div>
                 </td>

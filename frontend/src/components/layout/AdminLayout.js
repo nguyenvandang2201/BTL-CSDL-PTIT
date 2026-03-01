@@ -1,6 +1,10 @@
 import React, { useState } from 'react';
 import { Outlet, Link, useNavigate, useLocation } from 'react-router-dom';
 import { useAuth } from '../../contexts/AuthContext';
+import {
+  FaChartBar, FaFilm, FaTag, FaTheaterMasks, FaClock,
+  FaHome, FaUser, FaChevronLeft, FaChevronRight, FaVideo
+} from 'react-icons/fa';
 import '../../styles/AdminLayout.css';
 
 const AdminLayout = () => {
@@ -15,23 +19,23 @@ const AdminLayout = () => {
   };
 
   const menuItems = [
-    { path: '/admin', label: 'Dashboard', icon: '📊' },
-    { path: '/admin/movies', label: 'Quản lý Phim', icon: '🎬' },
-    { path: '/admin/genres', label: 'Quản lý Thể loại', icon: '🏷️' },
-    { path: '/admin/auditoriums', label: 'Quản lý Phòng chiếu', icon: '🎭' },
-    { path: '/admin/showtimes', label: 'Quản lý Suất chiếu', icon: '⏰' },
+    { path: '/admin', label: 'Dashboard', icon: <FaChartBar /> },
+    { path: '/admin/movies', label: 'Quản lý Phim', icon: <FaFilm /> },
+    { path: '/admin/genres', label: 'Quản lý Thể loại', icon: <FaTag /> },
+    { path: '/admin/auditoriums', label: 'Quản lý Phòng chiếu', icon: <FaTheaterMasks /> },
+    { path: '/admin/showtimes', label: 'Quản lý Suất chiếu', icon: <FaClock /> },
   ];
 
   return (
     <div className="admin-layout">
       <aside className={`sidebar ${sidebarOpen ? 'open' : 'closed'}`}>
         <div className="sidebar-header">
-          <h2>🎬 Admin Panel</h2>
+          <h2><FaVideo style={{marginRight: 8, color: '#e74c3c'}} /> Admin Panel</h2>
           <button 
             className="toggle-sidebar"
             onClick={() => setSidebarOpen(!sidebarOpen)}
           >
-            {sidebarOpen ? '◀' : '▶'}
+            {sidebarOpen ? <FaChevronLeft /> : <FaChevronRight />}
           </button>
         </div>
 
@@ -52,7 +56,7 @@ const AdminLayout = () => {
 
         <div className="sidebar-footer">
           <Link to="/" className="sidebar-link">
-            <span className="icon">🏠</span>
+            <span className="icon"><FaHome /></span>
             {sidebarOpen && <span className="label">Về trang chủ</span>}
           </Link>
         </div>
@@ -63,7 +67,7 @@ const AdminLayout = () => {
           <div className="admin-header-content">
             <h1>Quản trị hệ thống</h1>
             <div className="admin-user-menu">
-              <span className="admin-user-name">👤 {user?.username}</span>
+              <span className="admin-user-name"><FaUser style={{marginRight: 6, fontSize: 13}} /> {user?.username}</span>
               <button onClick={handleLogout} className="btn-logout">
                 Đăng xuất
               </button>

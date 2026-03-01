@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useAuth } from '../../contexts/AuthContext';
 import { authAPI } from '../../services/api';
+import { FaUserCircle, FaCrown, FaFilm, FaClipboardList } from 'react-icons/fa';
 import '../../styles/Profile.css';
 
 const UserProfilePage = () => {
@@ -135,11 +136,11 @@ const UserProfilePage = () => {
           <div className="profile-header">
             <h1>Thông tin tài khoản</h1>
             <div className="user-badge">
-              <span className="user-icon">👤</span>
+              <span className="user-icon"><FaUserCircle style={{fontSize: 40, color: '#c0392b'}} /></span>
               <div>
                 <div className="user-name">{user?.username}</div>
                 <div className="user-role">
-                  {user?.role === 'admin' ? '👑 Admin' : '🎬 User'}
+                  {user?.role === 'admin' ? <><FaCrown style={{marginRight:4,color:'#f39c12'}} />Admin</> : <><FaFilm style={{marginRight:4,color:'#c0392b'}} />User</>}
                 </div>
               </div>
             </div>
@@ -224,7 +225,7 @@ const UserProfilePage = () => {
           {activeTab === 'password' && (
             <form onSubmit={handleChangePassword} className="profile-form">
               <div className="password-requirements">
-                <p className="requirements-title">📋 Yêu cầu mật khẩu:</p>
+                <p className="requirements-title"><FaClipboardList style={{marginRight: 6}} /> Yêu cầu mật khẩu:</p>
                 <ul className="requirements-list">
                   <li className={passwordData.new_password.length >= 6 ? 'valid' : ''}>
                     ✓ Ít nhất 6 ký tự

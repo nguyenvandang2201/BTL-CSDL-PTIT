@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { moviesAPI, genresAPI } from '../../services/api';
+import { FaPlus, FaEdit, FaTrash, FaFilm } from 'react-icons/fa';
 import '../../styles/AdminPages.css';
 
 const AdminMovies = () => {
@@ -291,7 +292,7 @@ const AdminMovies = () => {
                     {movie.poster_url ? (
                       <img src={movie.poster_url} alt={movie.title} className="table-thumbnail" />
                     ) : (
-                      <div className="table-thumbnail" style={{display:'flex',alignItems:'center',justifyContent:'center',fontSize:'20px'}}>🎬</div>
+                      <div className="table-thumbnail" style={{display:'flex',alignItems:'center',justifyContent:'center',fontSize:'20px'}}><FaFilm style={{color:'#c0392b'}} /></div>
                     )}
                     <div className="movie-cell-info">
                       <span className="movie-cell-title" title={movie.title}>{movie.title}</span>
@@ -324,10 +325,10 @@ const AdminMovies = () => {
                 <td>
                   <div className="action-buttons">
                     <button className="btn-edit" onClick={() => handleEdit(movie)}>
-                      ✏️
+                      <FaEdit />
                     </button>
                     <button className="btn-delete" onClick={() => handleDelete(movie.id)}>
-                      🗑️
+                      <FaTrash />
                     </button>
                   </div>
                 </td>

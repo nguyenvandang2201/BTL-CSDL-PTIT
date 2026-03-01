@@ -1,5 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { showtimesAPI, moviesAPI, auditoriumsAPI } from '../../services/api';
+import {
+  FaPlus, FaEdit, FaTrash, FaLayerGroup, FaList,
+  FaExclamationTriangle, FaInfoCircle
+} from 'react-icons/fa';
 import '../../styles/AdminPages.css';
 
 const AdminShowtimes = () => {
@@ -203,18 +207,18 @@ const AdminShowtimes = () => {
                 className={`btn-toggle ${viewMode === 'grouped' ? 'active' : ''}`}
                 onClick={() => setViewMode('grouped')}
               >
-                📊 Phân nhóm
+                <FaLayerGroup style={{marginRight: 6}} /> Phân nhóm
               </button>
               <button 
                 className={`btn-toggle ${viewMode === 'list' ? 'active' : ''}`}
                 onClick={() => setViewMode('list')}
               >
-                📋 Danh sách
+                <FaList style={{marginRight: 6}} /> Danh sách
               </button>
             </div>
           )}
           <button className="btn-primary" onClick={() => setShowForm(true)}>
-            ➕ Thêm suất chiếu
+            <FaPlus style={{marginRight: 6}} /> Thêm suất chiếu
           </button>
         </div>
       </div>
@@ -228,15 +232,15 @@ const AdminShowtimes = () => {
           </div>
           <div className="summary-card showing">
             <span className="count">{groupedShowtimes.summary.showing}</span>
-            <span className="label">🟢 Đang chiếu</span>
+            <span className="label">Đang chiếu</span>
           </div>
           <div className="summary-card upcoming">
             <span className="count">{groupedShowtimes.summary.upcoming}</span>
-            <span className="label">🔵 Sắp chiếu</span>
+            <span className="label">Sắp chiếu</span>
           </div>
           <div className="summary-card finished">
             <span className="count">{groupedShowtimes.summary.finished}</span>
-            <span className="label">⚫ Đã kết thúc</span>
+            <span className="label">Đã kết thúc</span>
           </div>
         </div>
       )}
@@ -288,7 +292,7 @@ const AdminShowtimes = () => {
                 </select>
                 {(!Array.isArray(auditoriums) || auditoriums.length === 0) && (
                   <small style={{color: 'orange'}}>
-                    ⚠️ Vui lòng liên hệ quản trị viên để tạo phòng chiếu
+                    <FaExclamationTriangle style={{marginRight: 4}} /> Vui lòng liên hệ quản trị viên để tạo phòng chiếu
                   </small>
                 )}
               </div>
@@ -316,7 +320,7 @@ const AdminShowtimes = () => {
                     className="input-disabled"
                   />
                   <small style={{color: '#888', fontSize: '12px'}}>
-                    ℹ️ Được tính tự động: Thời gian phim + 30 phút dọn dẹp
+                    <FaInfoCircle style={{marginRight: 4}} /> Được tính tự động: Thời gian phim + 30 phút dọn dẹp
                   </small>
                 </div>
               </div>
@@ -354,7 +358,7 @@ const AdminShowtimes = () => {
           {/* Đang chiếu */}
           {groupedShowtimes.showing.length > 0 && (
             <div className="showtime-group">
-              <h3 className="group-title showing">🟢 Đang chiếu ({groupedShowtimes.showing.length})</h3>
+              <h3 className="group-title showing">Đang chiếu ({groupedShowtimes.showing.length})</h3>
               {renderShowtimeTable(groupedShowtimes.showing)}
             </div>
           )}
@@ -362,7 +366,7 @@ const AdminShowtimes = () => {
           {/* Sắp chiếu */}
           {groupedShowtimes.upcoming.length > 0 && (
             <div className="showtime-group">
-              <h3 className="group-title upcoming">🔵 Sắp chiếu ({groupedShowtimes.upcoming.length})</h3>
+              <h3 className="group-title upcoming">Sắp chiếu ({groupedShowtimes.upcoming.length})</h3>
               {renderShowtimeTable(groupedShowtimes.upcoming)}
             </div>
           )}
@@ -370,7 +374,7 @@ const AdminShowtimes = () => {
           {/* Đã kết thúc */}
           {groupedShowtimes.finished.length > 0 && (
             <div className="showtime-group">
-              <h3 className="group-title finished">⚫ Đã kết thúc ({groupedShowtimes.finished.length})</h3>
+              <h3 className="group-title finished">Đã kết thúc ({groupedShowtimes.finished.length})</h3>
               {renderShowtimeTable(groupedShowtimes.finished)}
             </div>
           )}
@@ -427,10 +431,10 @@ const AdminShowtimes = () => {
                 <td>
                   <div className="action-buttons">
                     <button className="btn-edit" onClick={() => handleEdit(showtime)}>
-                      ✏️
+                      <FaEdit />
                     </button>
                     <button className="btn-delete" onClick={() => handleDelete(showtime.id)}>
-                      🗑️
+                      <FaTrash />
                     </button>
                   </div>
                 </td>

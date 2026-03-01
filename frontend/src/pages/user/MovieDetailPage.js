@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { moviesAPI, showtimesAPI } from '../../services/api';
+import { FaFilm } from 'react-icons/fa';
 import '../../styles/MovieDetail.css';
 
 const MovieDetailPage = () => {
@@ -87,7 +88,7 @@ const MovieDetailPage = () => {
                 <img src={movie.poster_url} alt={movie.title} />
               ) : (
                 <div className="poster-placeholder-large">
-                  <span>🎬</span>
+                  <FaFilm style={{fontSize: 60, color: '#c0392b'}} />
                 </div>
               )}
             </div>

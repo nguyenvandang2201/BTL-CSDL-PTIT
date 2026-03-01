@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { moviesAPI } from '../../services/api';
+import { FaFilm, FaSearch, FaStar, FaClock, FaTicketAlt } from 'react-icons/fa';
 import '../../styles/HomePage.css';
 
 const HomePage = () => {
@@ -44,7 +45,7 @@ const HomePage = () => {
     <div className="home-page">
       <div className="hero-section">
         <div className="container">
-          <h1 className="hero-title">🎬 Đặt vé xem phim online</h1>
+          <h1 className="hero-title"><FaFilm style={{marginRight: 10}} /> Đặt vé xem phim online</h1>
           <p className="hero-subtitle">Trải nghiệm điện ảnh tuyệt vời</p>
           
           <form onSubmit={handleSearch} className="search-form">
@@ -56,7 +57,7 @@ const HomePage = () => {
               className="search-input"
             />
             <button type="submit" className="search-button">
-              🔍 Tìm kiếm
+              <FaSearch style={{marginRight: 6}} /> Tìm kiếm
             </button>
           </form>
         </div>
@@ -82,7 +83,7 @@ const HomePage = () => {
                     <img src={movie.poster_url} alt={movie.title} />
                   ) : (
                     <div className="poster-placeholder">
-                      <span>🎬</span>
+                      <FaFilm style={{fontSize: 40, color: '#c0392b'}} />
                     </div>
                   )}
                 </div>
@@ -93,11 +94,11 @@ const HomePage = () => {
                   <div className="movie-meta">
                     {movie.rating && (
                       <span className="movie-rating">
-                        ⭐ {movie.rating}
+                        <FaStar style={{color: '#f39c12', marginRight: 3}} /> {movie.rating}
                       </span>
                     )}
                     <span className="movie-duration">
-                      ⏱️ {movie.duration_min} phút
+                      <FaClock style={{marginRight: 4}} /> {movie.duration_min} phút
                     </span>
                   </div>
 
@@ -112,7 +113,7 @@ const HomePage = () => {
                     to={`/movies/${movie.id}`}
                     className="btn-book-now"
                   >
-                    <span className="btn-book-icon">🎟️</span>
+                    <span className="btn-book-icon"><FaTicketAlt /></span>
                     <span>Đặt vé ngay</span>
                     <span className="btn-book-arrow">→</span>
                   </Link>
