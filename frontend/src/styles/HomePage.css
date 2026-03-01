@@ -45,6 +45,7 @@
   background: #1a1a1a; border-radius: 16px; overflow: hidden;
   box-shadow: 0 4px 16px rgba(0,0,0,0.4); transition: all 0.4s cubic-bezier(0.4,0,0.2,1);
   cursor: pointer; border: 1px solid #2a2a2a;
+  display: flex; flex-direction: column;
 }
 .movie-card:hover { transform: translateY(-8px); box-shadow: 0 12px 32px rgba(192,57,43,0.25); border-color: rgba(192,57,43,0.4); }
 
@@ -53,12 +54,27 @@
 .movie-card:hover .movie-poster img { transform: scale(1.04); }
 .poster-placeholder { width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; font-size: 80px; background: linear-gradient(135deg, #1a0000 0%, #2d0000 100%); }
 
-.movie-info { padding: 20px; }
-.movie-title { font-size: 18px; font-weight: bold; margin-bottom: 10px; color: #f0f0f0; }
+.movie-info {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+.movie-title {
+  font-size: 18px; font-weight: bold; margin-bottom: 10px; color: #f0f0f0;
+  display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;
+  min-height: 48px;
+}
 .movie-meta { display: flex; gap: 12px; margin-bottom: 12px; flex-wrap: wrap; }
 .movie-rating, .movie-duration { font-size: 13px; color: #aaaaaa; display: flex; align-items: center; gap: 4px; }
 .movie-genres { display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 12px; }
 .genre-tag { padding: 3px 10px; background: rgba(192,57,43,0.15); color: #e74c3c; border-radius: 12px; font-size: 12px; font-weight: 500; border: 1px solid rgba(192,57,43,0.25); }
+
+.movie-description {
+  font-size: 13px; color: #888888; line-height: 1.5; margin-bottom: 14px;
+  display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;
+  min-height: 40px;
+}
 
 .btn-book-now {
   display: flex;
@@ -80,6 +96,7 @@
   transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
   letter-spacing: 0.3px;
   box-shadow: 0 2px 8px rgba(192,57,43,0.3);
+  margin-top: auto;
 }
 .btn-book-now::before {
   content: '';
