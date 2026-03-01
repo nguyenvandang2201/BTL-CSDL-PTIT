@@ -110,9 +110,11 @@ const HomePage = () => {
 
                   <Link
                     to={`/movies/${movie.id}`}
-                    className="btn-book"
+                    className="btn-book-now"
                   >
-                    Đặt vé ngay
+                    <span className="btn-book-icon">🎟️</span>
+                    <span>Đặt vé ngay</span>
+                    <span className="btn-book-arrow">→</span>
                   </Link>
                 </div>
               </div>
