@@ -61,7 +61,7 @@ const UserLayout = () => {
 
       <footer className="footer">
         <div className="container">
-          <p>&copy; 2025 Cinema Booking System - BTL Lập trình Web PTIT</p>
+          <p>&copy; 2026 Cinema Booking System - BTL Lập trình Web PTIT</p>
         </div>
       </footer>
     </div>
