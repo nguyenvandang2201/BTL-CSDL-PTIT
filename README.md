@@ -1,6 +1,6 @@
 # 🎬 Hệ Thống Đặt Vé Xem Phim Online
 
-> **Bài tập lớn môn Cơ sở dữ liệu - Học viện Công nghệ Bưu chính Viễn thông (PTIT)**
+> **Bài tập lớn môn Lập trình Web - Học viện Công nghệ Bưu chính Viễn thông (PTIT)**
 
 Hệ thống đặt vé xem phim trực tuyến hoàn chỉnh với đầy đủ tính năng cho người dùng và quản trị viên.
 
