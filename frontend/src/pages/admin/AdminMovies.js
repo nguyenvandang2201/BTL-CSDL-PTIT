@@ -288,10 +288,19 @@ const AdminMovies = () => {
               <tr key={movie.id}>
                 <td>
                   <div className="movie-cell">
-                    {movie.poster_url && (
-                      <img src={movie.poster_url} alt="" className="table-thumbnail" />
+                    {movie.poster_url ? (
+                      <img src={movie.poster_url} alt={movie.title} className="table-thumbnail" />
+                    ) : (
+                      <div className="table-thumbnail" style={{display:'flex',alignItems:'center',justifyContent:'center',fontSize:'20px'}}>🎬</div>
                     )}
-                    <span>{movie.title}</span>
+                    <div className="movie-cell-info">
+                      <span className="movie-cell-title" title={movie.title}>{movie.title}</span>
+                      {movie.description && (
+                        <span className="movie-cell-desc" title={movie.description}>
+                          {movie.description.length > 50 ? movie.description.substring(0, 50) + '…' : movie.description}
+                        </span>
+                      )}
+                    </div>
                   </div>
                 </td>
                 <td>
