@@ -79,6 +79,31 @@
 .form-note { background: rgba(192,57,43,0.08); padding: 12px; border-radius: 6px; margin-bottom: 20px; font-size: 13px; color: #aaaaaa; line-height: 1.6; border-left: 3px solid rgba(192,57,43,0.3); }
 .form-actions { display: flex; gap: 12px; justify-content: flex-end; padding-top: 20px; border-top: 1px solid #2a2a2a; }
 
+/* datetime-local dark theme */
+.admin-form input[type="datetime-local"] {
+  color-scheme: dark;
+}
+.admin-form input[type="datetime-local"]::-webkit-calendar-picker-indicator {
+  filter: invert(1) opacity(0.6);
+  cursor: pointer;
+  border-radius: 4px;
+  padding: 2px;
+}
+.admin-form input[type="datetime-local"]::-webkit-calendar-picker-indicator:hover {
+  filter: invert(1) opacity(1);
+  background: rgba(192,57,43,0.2);
+}
+
+/* Disabled input */
+.admin-form input.input-disabled,
+.admin-form input[disabled] {
+  background: #0d0d0d !important;
+  color: #666666 !important;
+  border-color: #222222 !important;
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
 /* Data Table */
 .data-table { overflow-x: auto; margin-top: 24px; }
 .data-table table { width: 100%; border-collapse: collapse; }
@@ -151,3 +176,32 @@
 .table-actions { display: flex; gap: 8px; }
 
 .error { background: rgba(192,57,43,0.12); color: #e74c3c; padding: 16px; border-radius: 8px; border-left: 4px solid #c0392b; }
+
+.view-toggle {
+  display: flex;
+  gap: 4px;
+  background: #1a1a1a;
+  border: 2px solid #2a2a2a;
+  border-radius: 8px;
+  padding: 4px;
+}
+
+.btn-toggle {
+  padding: 8px 18px;
+  background: transparent;
+  color: #888888;
+  border: none;
+  border-radius: 6px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.btn-toggle:hover {
+  color: #f0f0f0;
+  background: #2a2a2a;
+}
+.btn-toggle.active {
+  background: #c0392b;
+  color: #ffffff;
+}

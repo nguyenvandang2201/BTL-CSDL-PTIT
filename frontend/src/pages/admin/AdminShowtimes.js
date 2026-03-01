@@ -313,9 +313,9 @@ const AdminShowtimes = () => {
                     value={formData.end_time}
                     readOnly
                     disabled
-                    style={{backgroundColor: '#f0f0f0', cursor: 'not-allowed'}}
+                    className="input-disabled"
                   />
-                  <small style={{color: '#666'}}>
+                  <small style={{color: '#888', fontSize: '12px'}}>
                     ℹ️ Được tính tự động: Thời gian phim + 30 phút dọn dẹp
                   </small>
                 </div>
