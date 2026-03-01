@@ -1,31 +1,15 @@
-.App {
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-}
+.App { min-height: 100vh; display: flex; flex-direction: column; }
 
-/* Loading Screen */
 .loading-screen {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  display: flex; justify-content: center; align-items: center;
   min-height: 100vh;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  color: white;
-  font-size: 1.5rem;
+  background: linear-gradient(135deg, #0d0d0d 0%, #1a0000 100%);
+  color: #f0f0f0; font-size: 1.5rem;
 }
 
-.loading-spinner {
-  animation: pulse 1.5s ease-in-out infinite;
-}
+.loading-spinner { animation: pulse 1.5s ease-in-out infinite; }
 
 @keyframes pulse {
-  0%, 100% {
-    opacity: 1;
-    transform: scale(1);
-  }
-  50% {
-    opacity: 0.5;
-    transform: scale(1.1);
-  }
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50%       { opacity: 0.5; transform: scale(1.1); }
 }
